@@ -11,6 +11,8 @@ public class Player : MonoBehaviour
     private float _speed;
     [SerializeField]
     private float _rotateSpeed;
+    [SerializeField]
+    private Gun _gun;
 
     private void Awake()
     {
@@ -18,14 +20,13 @@ public class Player : MonoBehaviour
         _controls = new Controls();
         _controls.Player.Enable();
         _controls.Player.Shoot.performed += Shoot;
-        
     }
 
     public void Shoot(InputAction.CallbackContext context)
     {
         if (context.performed)
         {
-            Debug.Log("Shooting");
+            _gun.Shoot();
         }
     }
 
@@ -42,8 +43,6 @@ public class Player : MonoBehaviour
             _playerRB.velocity = transform.transform.TransformDirection(new Vector3(0, inputVector.y * _speed, 0));
             transform.Rotate(Vector3.forward, -_rotateSpeed * inputVector.x * Time.deltaTime);
         }
-        
-
     }
 
     

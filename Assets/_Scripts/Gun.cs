@@ -35,6 +35,7 @@ public class Gun : MonoBehaviour
             TrailRenderer trail = Instantiate(_bulletTrail, _bulletSpawnPoint.position, Quaternion.identity);
             if(Physics.Raycast(_bulletSpawnPoint.position,direction, out RaycastHit hit, float.MaxValue, _mask))
             {
+                Debug.Log(hit.collider.name);
                 StartCoroutine(SpawnTrail(trail, hit.point, hit.normal, _bounceDistance, true));
             }
             else
@@ -71,6 +72,7 @@ public class Gun : MonoBehaviour
 
                 if(Physics.Raycast(hitPoint, bounceDirection, out RaycastHit hit, bounceDistance, _mask))
                 {
+                    Debug.Log(hit.collider.name);
                     yield return StartCoroutine(SpawnTrail(trail, hit.point, hit.normal, bounceDistance - Vector3.Distance(hit.point, hitPoint), true));
                 }
                 else
@@ -79,7 +81,6 @@ public class Gun : MonoBehaviour
                 }
             }
         }
-
         Destroy(trail.gameObject, trail.time);
     }
 }
