@@ -36,12 +36,12 @@ public class Player : MonoBehaviour
         float strafe = _controls.Player.Strafe.ReadValue<float>();
         if (strafe == 1)
         {
-            _playerRB.velocity = transform.transform.TransformDirection(new Vector3(inputVector.x * _speed, inputVector.y * _speed, 0));
+            _playerRB.velocity = transform.transform.TransformDirection(new Vector3( inputVector.x * _speed,0, inputVector.y * _speed));
         }
         else
         {
-            _playerRB.velocity = transform.transform.TransformDirection(new Vector3(0, inputVector.y * _speed, 0));
-            transform.Rotate(Vector3.forward, -_rotateSpeed * inputVector.x * Time.deltaTime);
+            _playerRB.velocity = transform.transform.TransformDirection(new Vector3(0,  0, inputVector.y * _speed));
+            transform.Rotate(Vector3.up, _rotateSpeed * inputVector.x * Time.deltaTime);
         }
     }
 

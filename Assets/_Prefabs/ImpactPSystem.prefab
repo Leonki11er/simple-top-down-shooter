@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 555657344581482714}
   - component: {fileID: 555657344581482713}
   - component: {fileID: 555657344581482712}
+  - component: {fileID: 8678110327776648563}
   m_Layer: 0
   m_Name: ImpactPSystem
   m_TagString: Untagged
@@ -4804,3 +4805,15 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &8678110327776648563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 555657344581482663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e008b00a8044ac744b858e9ae1184991, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
